@@ -32,7 +32,7 @@
               source $out/lib/SOURCE_ME.sh
             '';
             meta = with pkgs.lib; {
-              description = "A faster up utility";
+              description = "A fast way to go up relative directories";
               homepage = "https://github.com/NewDawn0/up";
               license = licenses.mit;
               maintainers = [ NewDawn0 ];
