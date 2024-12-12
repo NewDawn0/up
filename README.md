@@ -40,5 +40,6 @@ home.packages = [ pkgs.up ];
 
 ## Postinstall
 
-To initialize Up, add the output of `up-core --init` to your shell configuration file (e.g., `.bashrc`, `.zshrc`).
+If you built the package using NIX you can just source the generated file `./result/lib/SOURCE_ME.sh` otherwise
+append the output of `up-core --init` to your shell configuration file (e.g., `.bashrc`, `.zshrc`).
 By loading this function it enables the up command.
