@@ -14,12 +14,12 @@
         src = ./.;
         installPhase = ''
           install -D up-core -t $out/bin
-          mkdir -p $out/lib
-          echo "#!/${pkgs.runtimeShell}" > $out/lib/SOURCE_ME.sh
-          $out/bin/up-core --init >> $out/lib/SOURCE_ME.sh
+          mkdir -p $out/share
+          echo "#!/${pkgs.runtimeShell}" > $out/share/SOURCE_ME.sh
+          $out/bin/up-core --init >> $out/share/SOURCE_ME.sh
         '';
         shellHook = ''
-          source $out/lib/SOURCE_ME.sh
+          source $out/share/SOURCE_ME.sh
         '';
         meta = {
           description = "A tool to navigate up directories more swiftly";
