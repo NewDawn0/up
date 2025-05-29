@@ -15,8 +15,8 @@
         installPhase = ''
           install -D up-core -t $out/bin
           mkdir -p $out/share
-          echo "#!/${pkgs.runtimeShell}" > $out/share/SOURCE_ME.sh
-          $out/bin/up-core --init >> $out/share/SOURCE_ME.sh
+          echo "#!/${pkgs.runtimeShell}" > $out/share/up/SOURCE_ME.sh
+          $out/bin/up-core --init >> $out/share/up/SOURCE_ME.sh
         '';
         shellHook = ''
           source $out/share/SOURCE_ME.sh
