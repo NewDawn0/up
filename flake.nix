@@ -13,13 +13,13 @@
         version = "1.0.0";
         src = ./.;
         installPhase = ''
-          install -D up-core -t $out/bin
-          mkdir -p $out/share
+          install -D up-core $out/bin/up-core
+          mkdir -p $out/share/up
           echo "#!/${pkgs.runtimeShell}" > $out/share/up/SOURCE_ME.sh
           $out/bin/up-core --init >> $out/share/up/SOURCE_ME.sh
         '';
         shellHook = ''
-          source $out/share/SOURCE_ME.sh
+          source $out/share/up/SOURCE_ME.sh
         '';
         meta = {
           description = "A tool to navigate up directories more swiftly";
